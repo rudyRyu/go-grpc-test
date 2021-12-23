@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package test;
+
+option go_package = "go-grpc-test/test-proto";
+
+service Test {
+  rpc ControlGate(stream ControlGateRequest) returns (stream ControlGateResponse) {}
+}
+
+message ControlGateRequest {
+  string serial = 1;
+  string gate_status = 2;
+}
+message ControlGateResponse {
+  oneof control {
+    bool open = 1;
+    bool close = 2;
+
+    // 추후 기능들 추가 가능
+  }
+}
