@@ -17,9 +17,9 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='test.proto',
   package='test',
   syntax='proto3',
-  serialized_options=b'Z\027go-grpc-test/test-proto',
+  serialized_options=b'Z\"go-grpc-test/test-proto;test_proto',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\ntest.proto\x12\x04test\"9\n\x12\x43ontrolGateRequest\x12\x0e\n\x06serial\x18\x01 \x01(\t\x12\x13\n\x0bgate_status\x18\x02 \x01(\t\"A\n\x13\x43ontrolGateResponse\x12\x0e\n\x04open\x18\x01 \x01(\x08H\x00\x12\x0f\n\x05\x63lose\x18\x02 \x01(\x08H\x00\x42\t\n\x07\x63ontrol2P\n\x04Test\x12H\n\x0b\x43ontrolGate\x12\x18.test.ControlGateRequest\x1a\x19.test.ControlGateResponse\"\x00(\x01\x30\x01\x42\x19Z\x17go-grpc-test/test-protob\x06proto3'
+  serialized_pb=b'\n\ntest.proto\x12\x04test\"9\n\x12\x43ontrolGateRequest\x12\x0e\n\x06serial\x18\x01 \x01(\t\x12\x13\n\x0bgate_status\x18\x02 \x01(\t\"&\n\x13\x43ontrolGateResponse\x12\x0f\n\x07\x63ontrol\x18\x01 \x01(\t2P\n\x04Test\x12H\n\x0b\x43ontrolGate\x12\x18.test.ControlGateRequest\x1a\x19.test.ControlGateResponse\"\x00(\x01\x30\x01\x42$Z\"go-grpc-test/test-proto;test_protob\x06proto3'
 )
 
 
@@ -73,16 +73,9 @@ _CONTROLGATERESPONSE = _descriptor.Descriptor(
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='open', full_name='test.ControlGateResponse.open', index=0,
-      number=1, type=8, cpp_type=7, label=1,
-      has_default_value=False, default_value=False,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='close', full_name='test.ControlGateResponse.close', index=1,
-      number=2, type=8, cpp_type=7, label=1,
-      has_default_value=False, default_value=False,
+      name='control', full_name='test.ControlGateResponse.control', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
@@ -97,22 +90,11 @@ _CONTROLGATERESPONSE = _descriptor.Descriptor(
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
-    _descriptor.OneofDescriptor(
-      name='control', full_name='test.ControlGateResponse.control',
-      index=0, containing_type=None,
-      create_key=_descriptor._internal_create_key,
-    fields=[]),
   ],
   serialized_start=79,
-  serialized_end=144,
+  serialized_end=117,
 )
 
-_CONTROLGATERESPONSE.oneofs_by_name['control'].fields.append(
-  _CONTROLGATERESPONSE.fields_by_name['open'])
-_CONTROLGATERESPONSE.fields_by_name['open'].containing_oneof = _CONTROLGATERESPONSE.oneofs_by_name['control']
-_CONTROLGATERESPONSE.oneofs_by_name['control'].fields.append(
-  _CONTROLGATERESPONSE.fields_by_name['close'])
-_CONTROLGATERESPONSE.fields_by_name['close'].containing_oneof = _CONTROLGATERESPONSE.oneofs_by_name['control']
 DESCRIPTOR.message_types_by_name['ControlGateRequest'] = _CONTROLGATEREQUEST
 DESCRIPTOR.message_types_by_name['ControlGateResponse'] = _CONTROLGATERESPONSE
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
@@ -141,8 +123,8 @@ _TEST = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=146,
-  serialized_end=226,
+  serialized_start=119,
+  serialized_end=199,
   methods=[
   _descriptor.MethodDescriptor(
     name='ControlGate',
